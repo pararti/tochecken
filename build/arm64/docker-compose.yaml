@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    volumes:
+      - ./output:/output
+    command: /bin/sh -c "cp /myapp_arm64 /output/bot"
